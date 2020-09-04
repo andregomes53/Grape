@@ -7,8 +7,8 @@ RUN apt-get update -qq && apt-get install -y nodejs yarn
 
 RUN mkdir /app
 WORKDIR /app
-COPY Gemfile /app/Gemfile
-RUN bundle install
 COPY . /app
+RUN bundle install
+RUN yarn install --check-files
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
