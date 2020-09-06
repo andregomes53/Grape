@@ -25,7 +25,7 @@ Giuseppe Lanna
 
 Guilherme Oliveira Senna (10799212)
 
-Kevin Seiti Aramaki
+Kevin Seiti Aramaki (9790711)
 
 Leonardo Siqueira Britto
 
