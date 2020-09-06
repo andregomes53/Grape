@@ -1,18 +1,10 @@
-# Grape
+# Repositório Grape
 
-Requirements:
+Travis: [![Build Status](https://travis-ci.com/andregomes53/Grape.svg?branch=master)](https://travis-ci.com/andregomes53/Grape)
 
-- Docker
-- `docker-compose`
+Codeclimate: [![Maintainability](https://api.codeclimate.com/v1/badges/f394742acb3c2f600002/maintainability)](https://codeclimate.com/github/andregomes53/Grape/maintainability)
 
-Everything else will be installed inside the docker container automagically.
+Coveralls: [![Coverage Status](https://coveralls.io/repos/github/andregomes53/Grape/badge.svg?branch=master)](https://coveralls.io/github/andregomes53/Grape?branch=master)
 
-How to build:
 
-    git clone https://github.com/andregomes53/Grape
-    docker-compose build
-
-To run:
-
-    docker-compose up
-
+[Aplicação hospedada no Heroku ](https://grape-app22.herokuapp.com/)
