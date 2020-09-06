@@ -16,10 +16,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 4.0.1'
   gem 'cucumber-rails', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'database_cleaner'
+  gem 'jasmine'
+  gem 'coveralls', require: false  
 end
 
 group :development do
