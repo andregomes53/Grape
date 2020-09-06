@@ -21,13 +21,15 @@ Coveralls: [![Coverage Status](https://coveralls.io/repos/github/andregomes53/Gr
 
 André Luiz Penteado Gomes (10687659)
 
-Giuseppe Lanna
+Giuseppe Almeida Lanna (10724142)
 
 Guilherme Oliveira Senna (10799212)
 
 Kevin Seiti Aramaki (9790711)
 
-Leonardo Siqueira Britto
+Leonardo Siqueira Toscano de Britto (9794062)
 
-Lucas Ieks
+Lucas Ieks Minicz (10723972)
+
+
 
