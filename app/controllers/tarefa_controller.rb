@@ -1,0 +1,2 @@
+class TarefaController < ApplicationController
+end

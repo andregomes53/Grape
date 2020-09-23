@@ -1,5 +1,5 @@
 Dado('que estou na página de registro de tarefas') do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit 'tarefa/new'
 end
 
 Quando('clico em adicionar') do
