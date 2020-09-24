@@ -1,6 +1,7 @@
 * {
     font-family: normal;
     color: #200030;
+    user-select: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -9,13 +10,37 @@ h1, h2, h3, h4, h5, h6 {
     color: inherit;
 }
 
-body {
-    margin: 0px;
-    background-color: #ddd;
+div
+{
+    display: block;
 }
 
-sidebar.menu {
-    position: fixed;
+
+body {
+    margin: 0px;
+}
+
+#nocss
+{
+    display: none;
+}
+
+#full-container
+{
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: row;
+}
+
+#menu {
+    position: relative;
     width: 300px;
     height: 100%;
     background-color: #8010c0;
@@ -25,91 +50,97 @@ sidebar.menu {
     z-index: 1;
 }
 
-sidebar.menu h1 {
+#menu h1 {
     color: #e0d0ff;
     font-size: 15px;
     text-align: center;
+
     margin-left: 17%;
     margin-right: 17%;
     margin-top: 10px;
 }
 
-img.sidebar-logo {
+#menu .logo{
     width: 100px;
     position: relative;
     padding-left: 33%;
 }
 
-div.board {
+.board {
     position: relative;
     display: flex;
-    left: 300px;
-    margin: 0px;
-    padding: 0px;
-    width: 85%;
-    height: 100vh;
+    flex-direction: row;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    flex-grow: 1;
+    height: 100%;
     overflow-x: auto;
     overflow-y: hidden;
+    z-index: 2;
 }
 
-div.board div.column {
-    position: relative;
-    top: 0px;
-    width: calc(25% - 10px);
-    min-width: 300px;
-    height: auto;
+.list {
     background-color: #eee;
-    display: inline-block;
     border-radius: 7px;
-    margin: 5px;
-    padding: 0px;
     box-shadow: 0px 0px 5px 0px #00000020;
-}
-
-div.board div.column div.column-title {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+    margin: 5px;
+    max-height: 100%;
     position: relative;
-    height: 50px;
-    width: 100%;
-    border-radius: 7px 7px 0px 0px;
-    margin: 0px;
+    width: 275px;
     padding: 0px;
-    padding-top: 10px;
-    color: #f0f0f0;
-    text-align: center;
-    box-shadow: 0px 5px 5px 0px #00000020;
-    text-shadow: 0px 0px 10px #00000080;
+    vertical-align: top;
+    white-space: normal;
 }
 
-div.board div.column div.column-title.todo {
-    background-color: #d02040;
-    ;
-}
+    .list-title {
+        display: inline-block;
+        position: relative;
+        height: auto;
+        width: 100%;
+        border-radius: 7px 7px 0px 0px;
+        margin: 0px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: #f0f0f0;
+        text-align: center;
+        box-shadow: 0px 5px 5px 0px #00000020;
+        text-shadow: 0px 0px 10px #00000080;
+    }
 
-div.board div.column div.column-title.doing {
-    background-color: #c0b030;
-}
+    .list-title.todo {
+        background-color: #d02040;
+        ;
+    }
 
-div.board div.column div.column-title.code-review {
-    background-color: #3088e0;
-}
+    .list-title.done {
+        background-color: #18a860;
+    }
 
-div.board div.column div.column-title.done {
-    background-color: #18a860;
-}
+    .list-title.other {
+        background-color: #3088e0;
+    }
 
-div.tasklist-tasks {
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: calc(100% - 55px);
-}
 
-div.task {
-    transition: 0.3s;
+    .list-content {
+        padding: 10px;
+        margin-bottom: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: max-content;
+    }
+
+    .list-content:first-child
+    {
+        margin-top: 30px;
+    }
+
+.card {
     background-color: white;
-    margin: 10px;
-    margin-bottom: 20px;
     padding: 10px;
+    margin-top: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px #00000020;
 }
