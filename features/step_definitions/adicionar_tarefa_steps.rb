@@ -10,7 +10,7 @@ Quando('clico em adicionar') do
   click_on 'Adicionar nova tarefa'
 end
 
-Então('ele deve ter sido salvo no banco de dados') do
+Então('ela deve ter sido salvo no banco de dados') do
   tarefa = Tarefa.order("id").last
   expect(tarefa.titulo).to eq('Nova tarefa')
 end

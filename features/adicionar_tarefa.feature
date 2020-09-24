@@ -9,7 +9,7 @@ Cenário: Tarefa adicionada com sucesso
 Dado que estou na página de registro de tarefas
 Quando preencho o campo 'titulo' com 'nome da nova tarefa'
 E clico em adicionar
-Então ele deve ter sido salvo no banco de dados
+Então ela deve ter sido salvo no banco de dados
 E deverei ver a tarefa no registro de tarefas
 
 Cenário: Erro em adicionar tarefa - sem titulo
