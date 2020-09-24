@@ -85,6 +85,7 @@ body {
 .list-wrapper {
     display: inline-block;
     width: 272px;
+    min-width: 272px;
     height: 100%;
     margin: 5px;
     vertical-align: top;
@@ -116,12 +117,10 @@ body {
     color: #f0f0f0;
     text-align: center;
     box-shadow: 0px 5px 5px 0px #00000020;
-    text-shadow: 0px 0px 10px #00000080;
 }
 
 .list-title.todo {
     background-color: #d02040;
-    ;
 }
 
 .list-title.done {
@@ -147,6 +146,7 @@ body {
     background-color: white;
     padding: 10px;
     margin-top: 10px;
+    max-height: 150px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px #00000020;
 }
