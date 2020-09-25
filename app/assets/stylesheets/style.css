@@ -22,6 +22,10 @@ body {
     display: none;
 }
 
+.soft-transition {
+    transition: 0.2s;
+}
+
 #full-container {
     background: linear-gradient(90deg, #ddd 28px, transparent 1%) center, linear-gradient(#ddd 28px, transparent 1%) center, #bad;
     background-size: 30px 30px;
@@ -88,10 +92,6 @@ body {
 
 .menu-option {
     background-color: #ffffff00;
-    border-color: #ffffff00;
-    border-width: 1px 0px;
-    border-style: solid;
-    border-bottom: solid 1px #ffffff!important;
     color: #fffffff0;
     cursor: pointer;
     height: auto;
@@ -104,6 +104,7 @@ body {
 
 .menu-option:hover {
     background-color: #ffffff40;
+    border-left: solid 8px #fff;
 }
 
 
@@ -183,9 +184,7 @@ body {
     margin-bottom: 10px;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-right: 0px;
-    padding: 10px;
-    padding-right: 3px;
+    padding: 10px 10px;
     vertical-align: top;
 }
 
