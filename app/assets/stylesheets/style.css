@@ -87,7 +87,7 @@ body {
     width: 272px;
     min-width: 272px;
     height: 100%;
-    margin: 5px;
+    margin: 7px;
     vertical-align: top;
 }
 
@@ -98,8 +98,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 50px;
-    max-height: 100%;
-    margin-bottom: 10px;
+    max-height: calc(100% - 7px);
+    overflow: hidden;
     position: relative;
     padding: 0px;
     white-space: normal;
@@ -135,7 +135,10 @@ body {
     margin-bottom: 10px;
     overflow-x: hidden;
     overflow-y: auto;
+    padding-right: 0px;
     padding: 10px;
+    padding-right: 3px;
+    vertical-align: top;
 }
 
 .list-content:first-child {
@@ -144,11 +147,31 @@ body {
 
 .card {
     background-color: white;
-    padding: 10px;
-    margin-top: 10px;
-    max-height: 150px;
     border-radius: 10px;
     box-shadow: 0px 0px 5px 0px #00000020;
+    box-sizing: border-box;
+    margin-top: 10px;
+    max-height: max-content;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.card-header
+{
+    background: #e8e8e8;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    white-space: nowrap;
+}
+
+.card-description
+{
+    margin: 0px;
+    outline: none;
+    padding: 10px;
 }
 
 div.task:hover {
@@ -156,16 +179,16 @@ div.task:hover {
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
+    width: 7px;
+    height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #00000000;
-    border-radius: 5px;
+    background: #00000020;
+    border-radius: 7px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #8020b0;
+    background: #00000040;
     border-radius: 5px;
 }
