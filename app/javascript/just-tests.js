@@ -38,6 +38,7 @@ function newList(name)
 function addCard(id, name)
 {
     var button2 = document.getElementById("add-button-1");
+    var but3 = div#document;
     var button = document.getElementById(id);
     button.insertBefore(button, newCard(name));
 }
