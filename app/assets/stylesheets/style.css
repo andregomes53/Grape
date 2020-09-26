@@ -73,10 +73,12 @@ body {
 }
 
 .menu-header {
+    border-bottom: transparent 2px #00000030;
+    box-shadow: 0px 5px 5px #00000020;
     display: flex;
     flex-direction: row;
-    margin: 20px;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-left: 25px;
 }
 
 .logo-wrapper {
@@ -232,6 +234,7 @@ body {
     margin: 0px;
     outline: none;
     padding: 6px 10px;
+    text-align: justify;
 }
 
 .card-add {
