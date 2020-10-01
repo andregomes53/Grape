@@ -53,7 +53,9 @@
         <div class="board-wrapper">
             <div class="board" id="board">
                 <div id="lists">
-                    <div class="list-wrapper">
+
+                    <!--Cada lista deve estar em seu próprio list-wrapper com o id correspondente à ordem da lista.-->
+                    <div class="list-wrapper" id="list-1">
                         <div class="list">
                             <div class="list-title todo">
                                 A fazer
@@ -61,268 +63,26 @@
                             </div>
 
                             <div class="list-content">
-                                <!--A div task é só um exemplo do que vai ser adicionado dinamicamente.-->
+
+                                <!--Aqui é onde ficam todos os cards de uma lista. O id da div abaixo deve ser correspondente com o id da lista.-->
                                 <div id="cardlist-1">
 
+                                    <!--Essa é a definição de um exemplo de card. Talvez precise de algum id ou coisa do tipo.-->
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3>Cartão exemplo</h3>
+                                        </div>
+                                        <div contenteditable="true" class="card-description" spellcheck="false">
+                                            Lorem ipsum.
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="card-add soft-transition" id="add-button-1"
                                     onclick="addCard('add-button-1', 'Novo cartão');">+ Adicionar cartão</div>
                             </div>
                         </div>
                     </div>
-                    <div class="list-wrapper">
-                        <div class="list">
-                            <div class="list-title done">
-                                Feito
-                                <div class="list-addcard"></div>
-                            </div>
 
-                            <div class="list-content">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                        Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                        Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-wrapper">
-                        <div class="list">
-                            <div class="list-title done">
-                                Feito
-                                <div class="list-addcard"></div>
-                            </div>
-
-                            <div class="list-content">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-wrapper">
-                        <div class="list">
-                            <div class="list-title done">
-                                Feito
-                                <div class="list-addcard"></div>
-                            </div>
-
-                            <div class="list-content">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-wrapper">
-                        <div class="list">
-                            <div class="list-title done">
-                                Feito
-                                <div class="list-addcard"></div>
-                            </div>
-
-                            <div class="list-content">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-wrapper">
-                        <div class="list">
-                            <div class="list-title done">
-                                Feito
-                                <div class="list-addcard"></div>
-                            </div>
-
-                            <div class="list-content">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-wrapper">
-                        <div class="list">
-                            <div class="list-title done">
-                                Feito
-                                <div class="list-addcard"></div>
-                            </div>
-
-                            <div class="list-content">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-wrapper">
-                        <div class="list">
-                            <div class="list-title done">
-                                Feito
-                                <div class="list-addcard"></div>
-                            </div>
-
-                            <div class="list-content">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3>Fazer dever de Matemática</h3>
-                                    </div>
-                                    <div contenteditable="true" class="card-description" spellcheck="false">
-                                            Bater um lol com os amigos e largar o dever de mat pra la.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="list-wrapper">
                         <div class="list-add soft-transition">
                             + Criar outra lista
@@ -336,7 +96,6 @@
                 return 1;
             }
         </script>
-        <!--<script type="text/javascript" src="../../javascript/just-tests.js"></script>-->
 </body>
 
 </html>
