@@ -1,3 +1,21 @@
+<% if @task.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= @task.errors.count %> erro(s) impedem que a tarefa seja salva
+    </h2>
+
+    <%= debug @task %>
+    <p>
+      <b>Error Count:</b>
+      <%= @task.errors.count %>
+    </p>
+    <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li>: <%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_with scope: :tarefa, url:tarefa_index_path, local: true  do |form| %>
   <p>
     <%= form.label :titulo %><br>
