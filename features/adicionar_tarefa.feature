@@ -7,14 +7,14 @@ Eu quero colocar uma tarefa no banco de dados
 
 Cenário: Tarefa adicionada com sucesso
 Dado que estou na página de registro de tarefas
-Quando preencho o campo 'titulo' com 'nome da nova tarefa'
+Quando preencho o campo 'tarefa_titulo' com 'Nova tarefa'
 E clico em adicionar
 Então ela deve ter sido salvo no banco de dados
 E deverei ver a tarefa no registro de tarefas
 
 Cenário: Erro em adicionar tarefa - sem titulo
 Dado que estou na página de registro de tarefas
-Quando deixo o campo 'titulo' vazio
+Quando deixo o campo 'tarefa_titulo' vazio
 E clico em adicionar
 Então deverei ver a mensagem de erro "O nome da tarefa deve ser informado"
 

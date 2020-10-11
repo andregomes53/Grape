@@ -1,0 +1,9 @@
+<%= form_with scope: :tarefa, url:tarefa_index_path, local: true  do |form| %>
+  <p>
+    <%= form.label :titulo %><br>
+    <%= form.text_field :titulo %>
+  </p>
+  <p>
+    <%= form.submit 'Adicionar nova tarefa' %>
+  </p>
+<% end %>

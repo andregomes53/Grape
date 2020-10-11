@@ -11,7 +11,7 @@ Quando('clico em adicionar') do
 end
 
 Então('ela deve ter sido salvo no banco de dados') do
-  tarefa = Tarefa.order("id").last
+  tarefa = Task.order("id").last
   expect(tarefa.titulo).to eq('Nova tarefa')
 end
 
