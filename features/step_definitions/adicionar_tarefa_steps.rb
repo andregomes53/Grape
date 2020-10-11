@@ -12,7 +12,7 @@ end
 
 Então('ela deve ter sido salvo no banco de dados') do
   tarefa = Task.order("id").last
-  expect(tarefa.titulo).to eq('Nova tarefa')
+  expect(tarefa.title).to eq('Nova tarefa')
 end
 
 Então('deverei ver a tarefa no registro de tarefas') do
