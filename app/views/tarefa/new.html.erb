@@ -1,0 +1,29 @@
+<% if @task.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= @task.errors.count %> erro(s) impedem que a tarefa seja salva
+    </h2>
+    <p>
+      <b>Error Count:</b>
+      <%= @task.errors.count %>
+    </p>
+    <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li>: <%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_with scope: :task, url:tarefa_index_path, local: true  do |form| %>
+  <p>
+    <%= form.label :titulo %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label "data de entrega" %><br>
+    <%= form.text_field :deadline %>
+  </p>
+  <p>
+    <%= form.submit 'Adicionar nova tarefa' %>
+  </p>
+<% end %>
