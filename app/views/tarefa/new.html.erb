@@ -3,8 +3,6 @@
     <h2>
       <%= @task.errors.count %> erro(s) impedem que a tarefa seja salva
     </h2>
-
-    <%= debug @task %>
     <p>
       <b>Error Count:</b>
       <%= @task.errors.count %>
@@ -20,6 +18,10 @@
   <p>
     <%= form.label :titulo %><br>
     <%= form.text_field :titulo %>
+  </p>
+  <p>
+    <%= form.label :data %><br>
+    <%= form.text_field :data %>
   </p>
   <p>
     <%= form.submit 'Adicionar nova tarefa' %>

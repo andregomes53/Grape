@@ -18,10 +18,10 @@ class TarefaController < ApplicationController
 
 	private
 	def tarefa_params
-		logger.debug("Debug de parâmetros")
-		logger.info(params)
-		logger.info params.require(:tarefa).permit(:titulo)
-		params.require(:tarefa).permit(:titulo)
+		# TODO Mapeamento de data -> deadline esta implementado manualmente, o certo agora é padronizar os nomes dos campos para inglês ou português
+		mapa = params.require(:tarefa).permit(:titulo, :data)
+		mapa[:deadline]= mapa[:data]
+		return mapa.except(:data)
 	end
 
 end

@@ -28,7 +28,7 @@ Então('deverei ver a mensagem de erro {string}') do |string|
 end
 
 Quando('preencho o campo {string} com uma data anterior a data atual') do |string|
-  expect(page).to have_content(string)
+  fill_in(string, :with => "2020-10-10T00:00:00")
 end
 
 Quando('anexo um arquivo de tamanho maior que 50MB') do

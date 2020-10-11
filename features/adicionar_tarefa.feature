@@ -20,7 +20,7 @@ Então deverei ver a mensagem de erro "O nome da tarefa deve ser informado"
 
 Cenário: Erro em adicionar tarefa - data inválida
 Dado que estou na página de registro de tarefas
-Quando preencho o campo 'data' com uma data anterior a data atual
+Quando preencho o campo 'tarefa_data' com uma data anterior a data atual
 E clico em adicionar
 Então deverei ver a mensagem de erro "A data informada é inválida"
 
