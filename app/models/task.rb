@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  validates :titulo, presence: {message: "O nome da tarefa deve ser informado"}
+  validates :title, presence: {message: "O nome da tarefa deve ser informado"}
   validate :deadlineInFuture
 
   private
