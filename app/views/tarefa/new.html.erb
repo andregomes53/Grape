@@ -3,12 +3,8 @@
     <h2>
       <%= @task.errors.count %> erro(s) impedem que a tarefa seja salva
     </h2>
-    <p>
-      <b>Error Count:</b>
-      <%= @task.errors.count %>
-    </p>
     <ul>
-      <% @task.errors.full_messages.each do |msg| %>
+      <% @task.errors.each do |attr, msg| %>
         <li>: <%= msg %></li>
       <% end %>
     </ul>
