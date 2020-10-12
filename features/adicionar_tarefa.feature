@@ -24,8 +24,3 @@ Quando preencho o campo 'task_deadline' com uma data anterior a data atual
 E clico em adicionar
 Então deverei ver a mensagem de erro "A data informada é inválida"
 
-Cenário: Erro em adicionar tarefa - Arquivo muito grande
-Dado que estou na página de registro de tarefas
-Quando anexo um arquivo de tamanho maior que 50MB
-E clico em adicionar
-Então deverei ver a mensagem de erro "Tamanho do arquivo muito grande (máx 50MB)"

@@ -30,7 +30,3 @@ end
 Quando('preencho o campo {string} com uma data anterior a data atual') do |string|
   fill_in(string, :with => "2020-10-10T00:00:00")
 end
-
-Quando('anexo um arquivo de tamanho maior que 50MB') do
-  pending # Write code here that turns the phrase above into concrete actions
-end
