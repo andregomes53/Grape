@@ -18,7 +18,7 @@ class TarefaController < ApplicationController
 
 	private
 	def tarefa_params
-		params.require(:task).permit(:titulo, :deadline)
+		params.require(:task).permit(:title, :deadline)
 	end
 
 end
