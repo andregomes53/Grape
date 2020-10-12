@@ -12,6 +12,3 @@ script:
 branches:
   only:
   - master
-
-env:
- - RAILS_ENV=production
