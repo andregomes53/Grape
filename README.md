@@ -24,7 +24,7 @@ André Luiz Penteado Gomes (10687659)
 
 Giuseppe Almeida Lanna (10724142)
 
-Guilherme Oliveira Senna (10799212)
+Guilherme Oliveira Senna - guisenna23 (10799212)
 
 Kevin Seiti Aramaki (9790711)
 
