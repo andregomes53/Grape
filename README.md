@@ -20,17 +20,17 @@ Coveralls: [![Coverage Status](https://coveralls.io/repos/github/andregomes53/Gr
 
 # Time
 
-André Luiz Penteado Gomes (10687659)
+André Luiz Penteado Gomes - andregomes53 (10687659)
 
-Giuseppe Almeida Lanna (10724142)
+Giuseppe Almeida Lanna - GiuseppeLanna (10724142)
 
 Guilherme Oliveira Senna - guisenna23 (10799212)
 
-Kevin Seiti Aramaki (9790711)
+Kevin Seiti Aramaki - ksar79 (9790711)
 
-Leonardo Siqueira Toscano de Britto (9794062)
+Leonardo Siqueira Toscano de Britto - leostb (9794062)
 
-Lucas Ieks Minicz (10723972)
+Lucas Ieks Minicz - min4builder (10723972)
 
 
 
