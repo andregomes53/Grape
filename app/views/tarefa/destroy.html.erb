@@ -1,0 +1,9 @@
+<%= form_with scope: :task, url:tarefa_index_path, local: true  do |form| %>
+  <p>
+    <%= form.label "id da tarefa" %><br>
+    <%= form.text_field :id %>
+  </p>
+  <p>
+    <%= form.submit 'Remover tarefa' %>
+  </p>
+<% end %>

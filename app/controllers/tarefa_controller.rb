@@ -2,7 +2,7 @@ class TarefaController < ApplicationController
 	def new
 		@task = Task.new
 	end
-	
+
 	def create
 		@task = Task.new(tarefa_params)
 		if @task.save
@@ -16,8 +16,12 @@ class TarefaController < ApplicationController
 		@task = Task.find(params[:id])
 	end
 
+	def destroy
+	end
+
 	private
 	def tarefa_params
+		puts("Entering tarefa params...")
 		params.require(:task).permit(:title, :deadline)
 	end
 
