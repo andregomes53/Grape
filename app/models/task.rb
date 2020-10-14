@@ -4,7 +4,7 @@ class Task < ApplicationRecord
 
   private
   def deadlineInFuture
-    if deadline != nil && deadline <= Date.today
+    if deadline == nil || deadline <= Date.today
       errors.add(:deadline, "A data informada é inválida")
       return false
     end

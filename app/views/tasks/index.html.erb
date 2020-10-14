@@ -1,0 +1,10 @@
+<%= link_to "Adicionar Tarefa", new_task_path %>
+<% @tasks.sort_by(&:deadline).each do |task| %>
+  <p>
+    <%= task.title %>
+    <strong>Data:</strong>
+    <%= task.deadline %>
+    <br>
+    <%= link_to "Detalhes", task %>
+  </p>
+<% end %>
