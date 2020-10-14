@@ -1,5 +1,8 @@
 <%= link_to "Adicionar Tarefa", new_task_path %>
-<% @tasks.sort_by(&:deadline).each do |task| %>
+<% @tasks.sort do |a, b|
+     # sort nils after everything else
+     if a.nil? then 1 elsif b.nil? then -1 else a <=> b end
+   end.each do |task| %>
   <p>
     <%= task.title %>
     <strong>Data:</strong>
