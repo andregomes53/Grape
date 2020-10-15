@@ -1,5 +1,6 @@
+
 Dado('que estou na página de remover tarefas') do
-  visit 'tarefa/destroy'
+  visit 'deleteTarefa/destroy'
 end
 
 Quando('clico em remover') do

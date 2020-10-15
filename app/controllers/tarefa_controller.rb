@@ -3,6 +3,8 @@ class TarefaController < ApplicationController
 		@task = Task.new
 	end
 
+	
+
 	def create
 		@task = Task.new(tarefa_params)
 		if @task.save
@@ -12,13 +14,21 @@ class TarefaController < ApplicationController
 		end
 	end
 
+
 	def show
 		@task = Task.find(params[:id])
+		
+	end
+
+	def delete
+		
 	end
 
 	def destroy
+		render 'deleteTarefa/destroy'
 	end
 
+	
 	private
 	def tarefa_params
 		puts("Entering tarefa params...")
