@@ -3,8 +3,6 @@ class TarefaController < ApplicationController
 		@task = Task.new
 	end
 
-	
-
 	def create
 		@task = Task.new(tarefa_params)
 		if @task.save
@@ -24,8 +22,16 @@ class TarefaController < ApplicationController
 		
 	end
 
+	def deleteTask
+		#apaga task com o ID do banco de dados
+		
+		@id = params.require(:deleteTask).permit(:id)
+		#Task.find_by(id: params[:id], sender_Id: 1).destroy
+		#Task.find(params[:id]).destroy
+	end
+
 	def destroy
-		render 'deleteTarefa/destroy'
+		render 'tarefa/destroy'
 	end
 
 	

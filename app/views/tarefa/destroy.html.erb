@@ -1,4 +1,4 @@
-<%= form_with scope: :task, url:tarefa_index_path, local: true  do |form| %>
+<%= form_with scope: :deleteTask, url:deletarTarefa_path, local: true  do |form| %>
   <p>
     <%= form.label "id da tarefa" %><br>
     <%= form.text_field :id %>

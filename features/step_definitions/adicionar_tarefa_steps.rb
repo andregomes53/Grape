@@ -4,6 +4,7 @@ end
 
 Quando('preencho o campo {string} com {string}') do |string, string2|
   fill_in string, :with => string2
+  #fill_in("deleteTask[id]", with: string2)
 end
 
 Quando('clico em adicionar') do

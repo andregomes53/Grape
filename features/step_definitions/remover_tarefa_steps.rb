@@ -1,6 +1,11 @@
 
 Dado('que estou na página de remover tarefas') do
-  visit 'deleteTarefa/destroy'
+  visit 'deletarTarefa'
+end
+
+
+Quando('preencho o campo {string} com {string}') do |string, string2|
+  fill_in("deleteTask[id]", with: string2)
 end
 
 Quando('clico em remover') do
