@@ -1,10 +1,14 @@
-class TarefaController < ApplicationController
+class TasksController < ApplicationController
+	def index
+		@tasks = Task.all
+	end
+
 	def new
 		@task = Task.new
 	end
 	
 	def create
-		@task = Task.new(tarefa_params)
+		@task = Task.new(task_params)
 		if @task.save
 			redirect_to action: 'show', id: @task.id
 		else
@@ -17,7 +21,7 @@ class TarefaController < ApplicationController
 	end
 
 	private
-	def tarefa_params
+	def task_params
 		params.require(:task).permit(:title, :deadline)
 	end
 

@@ -1,5 +1,5 @@
 Dado('que estou na página de registro de tarefas') do
-  visit 'tarefa/new'
+  visit 'tasks/new'
 end
 
 Quando('preencho o campo {string} com {string}') do |string, string2|

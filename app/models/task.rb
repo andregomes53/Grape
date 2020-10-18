@@ -4,7 +4,8 @@ class Task < ApplicationRecord
 
   private
   def deadlineInFuture
-    if deadline != nil && deadline <= Date.today
+    # FIXME: if the deadline is incorrectly formatted, it will be considered as "no deadline"
+    if !deadline.nil? && deadline <= Date.today
       errors.add(:deadline, "A data informada é inválida")
       return false
     end

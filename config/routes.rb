@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :tarefa
-  root 'tarefa#new'
+  resources :tasks
+  root 'tasks#new'
 end
