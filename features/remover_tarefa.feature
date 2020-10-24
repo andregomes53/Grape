@@ -1,5 +1,7 @@
 #language: pt
 
+@tarefa_duble
+
 Funcionalidade: Remover tarefa
 Como usuário
 Para que eu possa retirar uma tarefa do registro de tarefas
@@ -7,10 +9,10 @@ Eu quero remover uma tarefa do banco de dados
 
 Cenário: Tarefa removida com sucesso
 Dado que estou na página de remover tarefas
-Quando preencho o campo 'id' com '1'
+Quando preencho o campo id com '1'
 E clico em remover
 Então ela deve ter sido excluída no banco de dados
-E não deverei vê-la no registro de tarefas
+#E não deverei vê-la no registro de tarefas
 
 Cenário: Erro em remover tarefa - sem id
 Dado que estou na página de remover tarefas
