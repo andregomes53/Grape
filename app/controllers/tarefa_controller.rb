@@ -12,7 +12,6 @@ class TarefaController < ApplicationController
 		end
 	end
 
-
 	def show
 		@task = Task.find(params[:id])	
 	end
@@ -23,14 +22,20 @@ class TarefaController < ApplicationController
 
 	def deleteTask
 		#apaga task com o ID do banco de dados
-		@id = params.require(:deleteTask).permit(:id)
-		Task.find(@id["id"]).destroy
+		@task = Task.new
+		@id = params.require(:deleteTask).permit(:id)["id"]
+
+		if Task.exists?(id:@id)
+			Task.find(@id).destroy
+		else
+			render 'tarefa/destroy'
+		end
 	end
 
 	def destroy
+		@task = Task.new
 		render 'tarefa/destroy'
 	end
-
 	
 	private
 	def tarefa_params

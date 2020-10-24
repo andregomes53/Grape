@@ -1,3 +1,15 @@
+<% if @task.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= @task.errors.count %> erro(s) impedem que a tarefa seja removida
+    </h2>
+    <ul>
+      <% @task.errors.each do |attr, msg| %>
+        <li>: <%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <%= form_with scope: :deleteTask, url:deletarTarefa_path, local: true  do |form| %>
   <p>
     <%= form.label "id da tarefa" %><br>

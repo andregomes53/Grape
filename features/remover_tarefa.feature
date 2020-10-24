@@ -16,7 +16,7 @@ Então ela deve ter sido excluída no banco de dados
 
 Cenário: Erro em remover tarefa - sem id
 Dado que estou na página de remover tarefas
-Quando deixo o campo 'id' vazio
+Quando deixo o campo id vazio
 E clico em remover
 Então deverei ver a mensagem de erro "O id da tarefa deve ser informado"
 
