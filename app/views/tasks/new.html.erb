@@ -10,7 +10,7 @@
     </ul>
   </div>
 <% end %>
-<%= form_with scope: :task, url:tarefa_index_path, local: true  do |form| %>
+<%= form_with scope: :task, url: tasks_path, local: true  do |form| %>
   <p>
     <%= form.label :titulo %><br>
     <%= form.text_field :title %>
