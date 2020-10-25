@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 	has_many :tasks
+	has_many :board
+	has_many :user_board_table
 	
 	validates :name, presence: {message: "O campo nome deve ser preenchido"}
 	validates :email, presence: {message: "O campo email deve ser preenchido"}
