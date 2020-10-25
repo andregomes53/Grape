@@ -6,7 +6,7 @@ class TasksController < ApplicationController
 	def new
 		@task = Task.new
 	end
-	
+
 	def create
 		@task = Task.new(task_params)
 		if @task.save
@@ -17,9 +17,19 @@ class TasksController < ApplicationController
 	end
 
 	def show
-		@task = Task.find(params[:id])
+		@task = Task.find(params[:id])	
 	end
 
+	def delete
+		
+	end
+
+	def destroy
+		@task = Task.find(params[:id])
+		@task.destroy
+		redirect_to action: 'index'
+	end
+	
 	private
 	def task_params
 		params.require(:task).permit(:title, :deadline)
