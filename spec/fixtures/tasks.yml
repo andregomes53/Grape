@@ -1,0 +1,5 @@
+math_task:
+    id: 1
+    title: fazer tarefa de matematica
+    deadline: 2020-10-21
+    user_id: 1

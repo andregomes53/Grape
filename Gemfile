@@ -36,6 +36,7 @@ group :development, :test do
   gem 'coveralls', require: false  
   gem 'cucumber-rails', require: false
   gem 'sqlite3', '~> 1.4'
+  gem 'rails-controller-testing'
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
 end
