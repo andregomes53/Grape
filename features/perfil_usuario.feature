@@ -9,7 +9,7 @@ Cenário: Usuário registrado com sucesso
 Dado que estou na página de criação de usuário
 Quando preencho o campo name com 'João das Neves'
 E o campo email com "joao_neves@email.com"
-E o campo senha com "senha123" e o campo confirmar_senha com "senha123"
+E o campo senha com "Jo45Ness89" e o campo confirmar_senha com "Jo45Ness89"
 E clico em Registrar
 Então as informações do usuário deverão ter sido salvas no banco de dados
 
@@ -48,6 +48,26 @@ Dado que estou na página de criação de usuário
 Quando preencho o campo password com uma senha muito fraca 
 E clico em Registrar
 Então deverei ver a mensagem de erro "A senha informada é muito fraca"
+
+Cenário: Erro em registrar usuário - senha muito curta
+Dado que estou na página de criação de usuário
+Quando preencho o campo password com uma senha com menos oito caracteres
+E clico em Registrar
+Então deverei ver a mensagem de erro "Senha muito curta (mínimo 8 caracteres)"
+
+Cenário: Erro em registrar usuário - senha muito longa
+Dado que estou na página de criação de usuário
+Quando preencho o campo password com uma senha com mais de quinze caracteres 
+E clico em Registrar
+Então deverei ver a mensagem de erro "Senha muito longa (máximo 15 caracteres)"
+
+Cenário: Erro em registrar usuário - senha inválida (caracter inválido)
+Dado que estou na página de criação de usuário
+Quando preencho o campo password com uma senha que contém um caracter inválido 
+E clico em Registrar
+Então deverei ver a mensagem de erro "Apenas número e letras são aceitos"
+
+
 
 
 

@@ -23,7 +23,7 @@ Então('as informações do usuário deverão ter sido salvas no banco de dados'
   user = User.order("id").last
   expect(user.name).to eq('João das Neves')
   expect(user.email).to eq('joao_neves@email.com')
-  expect(user.password).to eq('senha123')
+  expect(user.password).to eq('Jo45Ness89')
 end
 
 Quando('deixo o campo name vazio') do
@@ -43,10 +43,22 @@ Quando('deixo o campo password vazio') do
 end
 
 Quando('preencho o campo password e o campo password_conf com dados diferentes') do
-  fill_in 'user[password]', :with => "senha123"
-  fill_in 'user[password_confirmation]', :with => "senha321"
+  fill_in 'user[password]', :with => "Jo45Ness89"
+  fill_in 'user[password_confirmation]', :with => "Jo45Ness89"
 end
 
 Quando('preencho o campo password com uma senha muito fraca') do
   fill_in 'user[password]', :with => "123"
+end
+
+Quando('preencho o campo password com uma senha com menos oito caracteres') do
+  fill_in 'user[password]', :with => "senha"
+end
+
+Quando('preencho o campo password com uma senha com mais de quinze caracteres') do
+  fill_in 'user[password]', :with => "senhamuitolonga1"
+end
+
+Quando('preencho o campo password com uma senha que contém um caracter inválido') do
+  fill_in 'user[password]', :with => "senha$123"
 end
