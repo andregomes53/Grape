@@ -1,6 +1,6 @@
 <h1> Página inicial</h1>
-
-<%= form_with scope: :board, url: "/board", local: true do |form| %>
+<%= @board= Board.new %>
+<%= form_with scope: :board, url: board_path, local: true do |form| %>
   <p>
     <%= form.text_field :name %>
     <%= form.submit "Criar quadro" %>
