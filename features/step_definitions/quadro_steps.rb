@@ -1,3 +1,5 @@
+
+
 Dado('que eu estou na página inicial') do
   visit ""
 end
@@ -30,3 +32,26 @@ end
 Então('deverei ver a mensagem de erro de campo vazio') do
   expect(page).to have_content("Preencha o nome do quadro")
 end
+
+Before('@board_duble') do
+  @board = Board.new(id:1,name:"Cucumber")
+  @board.save
+end
+
+Dado('que estou na página de listagem de quadros') do
+  visit "/boards"
+end
+
+Quando('clico no botão de excluir de um quadro') do
+  expect(Board.exists?(id:1)).to be true
+  click_on "Excluir"
+end
+
+Então('o quadro deve ser removido do banco de dados') do
+  expect(Board.exists?(id:1)).to be false
+end
+
+Então('deverei ver a página de listagem sem o quadro excluido') do
+  expect(page).not_to have_content("Cucumber")
+end
+

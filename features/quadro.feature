@@ -25,6 +25,7 @@ Funcionalidade: Criar um quadro
     E clico em criar quadro
     Então deverei ver a mensagem de erro de campo vazio
 
+  @board_duble
   Cenário: Remover quadro com sucesso
     Dado que estou na página de listagem de quadros
     Quando clico no botão de excluir de um quadro
