@@ -1,0 +1,8 @@
+<%= link_to "Adicionar board", new_board_path %>
+<% @boards.sort_by(&:id).each do |board| %>
+<p>
+    <%= board.name %>
+    <br>
+    <%= link_to "Detalhes", board %>
+</p>
+<% end %>
