@@ -12,7 +12,7 @@ end
 
 Quando('o campo senha com {string} e o campo confirmar_senha com {string}') do |string, string2|
   fill_in 'user[password]', :with => string
-  fill_in 'user[password_conf]', :with => string
+  fill_in 'user[password_confirmation]', :with => string
 end
 
 Quando('clico em Registrar') do
@@ -44,7 +44,7 @@ end
 
 Quando('preencho o campo password e o campo password_conf com dados diferentes') do
   fill_in 'user[password]', :with => "senha123"
-  fill_in 'user[password_conf]', :with => "senha321"
+  fill_in 'user[password_confirmation]', :with => "senha321"
 end
 
 Quando('preencho o campo password com uma senha muito fraca') do
