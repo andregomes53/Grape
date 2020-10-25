@@ -21,7 +21,6 @@ class TasksController < ApplicationController
 	end
 
 	def delete
-		
 	end
 
 	def destroy
@@ -32,7 +31,6 @@ class TasksController < ApplicationController
 	
 	private
 	def task_params
-		params.require(:task).permit(:title, :deadline)
+		params.require(:task).permit(:title, :deadline, :category)
 	end
-
 end
