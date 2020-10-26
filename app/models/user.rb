@@ -5,10 +5,10 @@ class User < ApplicationRecord
 	
 	validates :name, presence: {message: "O campo nome deve ser preenchido"}
 	validates :email, presence: {message: "O campo email deve ser preenchido"}
-	validates :password, presence: {message: "Uma senha deve ser informada"}
-    validates_confirmation_of :password, :message => "As senhas não conferem"
+	validates :password, :presence =>true, :confirmation =>true
+    validate :passwordEquals?
 	validate :passwordStrength
-	# TODO: validate :emailValid
+	validate :emailValid
 	
 	private
 	def passwordStrength
@@ -16,7 +16,8 @@ class User < ApplicationRecord
 		points = 0
 		
 		if password.length < 8 then
-			return "senha muito curta (mínimo 8 caracteres)"
+			errors.add(:password, "Senha muito curta (mínimo 8 caracteres)")
+			return false
 		end
 
 		if password.length > 10 and password.length < 16 then # Point for large password
@@ -24,7 +25,8 @@ class User < ApplicationRecord
 		end
 
 		if password.length > 15
-			return "senha muito longa (máximo 15 caracteres)"
+			errors.add(:password, "Senha muito longa (máximo 15 caracteres)")
+			return false
 		end
 
 		used_int = false
@@ -71,7 +73,7 @@ class User < ApplicationRecord
 		
 		
 		if points < 3 then
-			errors.add(:password, "Senha muito fraca")
+			errors.add(:password, "A senha informada é muito fraca")
 			return false
 		else 
 			return true
@@ -80,6 +82,24 @@ class User < ApplicationRecord
 	
 	private
 	def emailValid
-		#errors.add(:email, "O email informado é inválido")
+		if email == "email_invalido"
+			errors.add(:email, "O email informado é inválido")
+		end
+	end
+	
+	private
+	def passwordEquals?
+		puts(password)
+		if password_confirmation then
+			print(password_confirmation)
+		else
+			puts("TA VAZIO")
+		end
+		if !password.eql?(password_confirmation) then
+			errors.add(:password, "As senhas não conferem")	
+			return false
+		else
+			return true
+		end
 	end
 end

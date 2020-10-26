@@ -1,5 +1,5 @@
 Dado('que estou na página de criação de usuário') do
-  visit 'users/new'
+  visit "users/new"
 end
 
 Quando('preencho o campo name com {string}') do |string|
@@ -42,13 +42,18 @@ Quando('deixo o campo password vazio') do
   fill_in 'user[password]', :with => ""
 end
 
-Quando('preencho o campo password e o campo password_conf com dados diferentes') do
-  fill_in 'user[password]', :with => "Jo45Ness89"
-  fill_in 'user[password_confirmation]', :with => "Jo45Ness89"
+Quando('preencho o campo password e o campo password_confirmation com dados diferentes') do
+  fill_in 'user[name]', :with => "João das Neves"
+  fill_in 'user[email]', :with => "joao_neves@email.com"
+  fill_in 'user[password]', :with => "Jo54Ness89"
+  fill_in 'user[password_confirmation]', :with => "Jo45Ness98"
 end
 
 Quando('preencho o campo password com uma senha muito fraca') do
-  fill_in 'user[password]', :with => "123"
+  fill_in 'user[name]', :with => "João das Neves"
+  fill_in 'user[email]', :with => "joao_neves@email.com"
+  fill_in 'user[password]', :with => "12345678"
+   fill_in 'user[password_confirmation]', :with => "12345678"
 end
 
 Quando('preencho o campo password com uma senha com menos oito caracteres') do

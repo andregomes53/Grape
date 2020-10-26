@@ -39,7 +39,7 @@ Então deverei ver a mensagem de erro "O campo nome deve ser preenchido"
 
 Cenário: Erro em registrar usuário - senhas não conferem
 Dado que estou na página de criação de usuário
-Quando preencho o campo password e o campo password_conf com dados diferentes 
+Quando preencho o campo password e o campo password_confirmation com dados diferentes 
 E clico em Registrar
 Então deverei ver a mensagem de erro "As senhas não conferem"
 

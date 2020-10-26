@@ -1,5 +1,6 @@
 Dado('que estou na página de registro de tarefas') do
   visit 'tasks/new'
+  log(page.html)
 end
 
 Quando('preencho o campo {string} com {string}') do |string, string2|
@@ -23,8 +24,7 @@ Quando('deixo o campo {string} vazio') do |string|
   fill_in string, :with => ""
 end
 
-Então('deverei ver a mensagem de erro {string}') do |string|
-  log(page)
+Então('deverei ver a mensagem de erro {string}') do |string| 
   expect(page).to have_content(string)
 end
 
