@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
 	def index
-		@tasks = Task.all
+		if params[:task_filter].nil? or params[:task_filter].empty?
+			@tasks = Task.all
+		else
+			@tasks = Task.all.select { |x| not x.category.nil? and x.category.start_with?(params[:task_filter]) }
+		end
 	end
 
 	def new
@@ -21,7 +25,6 @@ class TasksController < ApplicationController
 	end
 
 	def delete
-		
 	end
 
 	def destroy
@@ -32,7 +35,6 @@ class TasksController < ApplicationController
 	
 	private
 	def task_params
-		params.require(:task).permit(:title, :deadline)
+		params.require(:task).permit(:title, :deadline, :category)
 	end
-
 end
