@@ -1,4 +1,8 @@
 <%= link_to "Adicionar Tarefa", new_task_path %>
+<%= form_with(url: "/tasks", method: "get") do %>
+  <%= text_field_tag(:task_filter) %>
+  <%= submit_tag("Filtrar") %>
+<% end %>
 <% @tasks.sort do |a, b|
      # sort tasks with no deadline after everything else
      if a.nil? then 1 elsif b.nil? then -1 else a <=> b end
@@ -6,18 +10,19 @@
   <p>
     <%= task.title %>
     <% if task.deadline %>
+      <br>
       <strong>Data:</strong>
       <%= task.deadline %>
     <% end %>
-    <% if task.category %>
+    <% if not task.category.nil? and not task.category.empty? %>
+      <br>
       <strong>Categoria:</strong>
       <%= task.category %>
     <% end %>
     <br>
     <%= link_to "Detalhes", task %>
     <br>
-    <%= link_to "Remover Tarefa", task,method: :delete, data: { confirm: 'Tem certeza que deseja excluir esta tarefa ?' } %>
-    <br>
+    <%= link_to "Remover Tarefa", task, method: :delete, data: { confirm: 'Tem certeza que deseja excluir esta tarefa?' } %>
     
   </p>
 <% end %>
