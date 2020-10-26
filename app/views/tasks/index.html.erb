@@ -1,5 +1,5 @@
 <%= link_to "Adicionar Tarefa", new_task_path %>
-<%= form_with(url: "/tasks", method: "get") do %>
+<%= form_with(url: "/tasks", method: "get", local: true) do %>
   <%= text_field_tag(:task_filter) %>
   <%= submit_tag("Filtrar") %>
 <% end %>

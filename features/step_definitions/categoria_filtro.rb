@@ -1,4 +1,4 @@
-Before('tres_tarefas') do
+Before('@tres_tarefas') do
   Task.new(title: 'A tarefa', category: 'A categoria').save
   Task.new(title: 'B tarefa', category: 'A categoria').save
   Task.new(title: 'C tarefa', category: 'B categoria').save
