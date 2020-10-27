@@ -1,6 +1,6 @@
 
 Before('@tarefa_duble') do
-  @task = Task.new(id:1,title:"Cucumber",deadline:"Ontem")
+  @task = Task.new(id:1,title:"Cucumber",deadline:"Ontem",user_id:1)
   @task.save
 end
 

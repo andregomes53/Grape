@@ -1,5 +1,6 @@
 #language: pt
 
+@usuario_duble
 Funcionalidade: Categoria de tarefa
 Como usuário
 Para que eu possa categorizar as tarefas

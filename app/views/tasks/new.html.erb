@@ -24,6 +24,9 @@
     <%= form.text_field :category %>
   </p>
   <p>
+    <%= form.hidden_field :user_id, value: 1 %>
+  </p>
+  <p>
     <%= form.submit 'Adicionar nova tarefa' %>
   </p>
 <% end %>

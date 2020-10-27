@@ -1,5 +1,6 @@
 #language: pt 
 
+@usuario_duble
 Funcionalidade: Adicionar tarefa
 Como usuário 
 Para que eu possa registrar minhas tarefas a fazer

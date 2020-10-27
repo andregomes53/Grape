@@ -1,7 +1,7 @@
 #language: pt
 
+@usuario_duble
 @tarefa_duble
-
 Funcionalidade: Remover tarefa
 Como usuário
 Para que eu possa retirar uma tarefa do registro de tarefas

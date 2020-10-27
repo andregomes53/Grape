@@ -1,5 +1,6 @@
 #language: pt
 
+@usuario_duble
 @tres_tarefas
 
 Funcionalidade: Filtragem de tarefas por categorias
