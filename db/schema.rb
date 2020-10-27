@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_10_24_230306) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_tasks_on_user_id"
+    t.string "category"
   end
 
   create_table "users", force: :cascade do |t|
