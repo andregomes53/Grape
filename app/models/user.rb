@@ -6,9 +6,9 @@ class User < ApplicationRecord
 	validates :name, presence: {message: "O campo nome deve ser preenchido"}
 	validates :email, presence: {message: "O campo email deve ser preenchido"}
 	validates :password, :presence =>true, :confirmation =>true
+	validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "O email informado é inválido"} 
     validate :passwordEquals?
 	validate :passwordStrength
-	validate :emailValid
 	
 	private
 	def passwordStrength
@@ -80,12 +80,6 @@ class User < ApplicationRecord
 		end
 	end
 	
-	private
-	def emailValid
-		if email == "email_invalido"
-			errors.add(:email, "O email informado é inválido")
-		end
-	end
 	
 	private
 	def passwordEquals?
