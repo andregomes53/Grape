@@ -1,6 +1,6 @@
 
 Before('@tarefa_duble') do
-  @task = Task.new(id:1,title:"Cucumber",deadline:"Ontem",user_id:1)
+  @task = Task.new(id:10,title:"Cucumber",deadline:"Ontem",user_id:10)
   @task.save
 end
 
@@ -13,7 +13,7 @@ Quando('clico no remover de uma tarefa') do
 end
 
 Então('ela deve ter sido excluída no banco de dados') do
-  expect(Task.exists?(id:1)).to be false
+  expect(Task.exists?(id:10)).to be false
 end
 
 Então('não deverei vê-la no registro de tarefas') do
