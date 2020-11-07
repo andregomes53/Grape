@@ -11,11 +11,17 @@ Dado('que estou na página de listagem de tarefas') do
 end
 
 Quando('clico no remover de uma tarefa') do
-  click_on('Remover Tarefa', match: :first)
+  #click_on('Remover Tarefa', match: :first)
+  within('task-Cucumber') do
+    find('task-Cucumber').find('Remover Tarefa').click
+  end
+  #txt = "/div[@id='task-Cucumber']"
+  #find(:xpath,"//div[@id='task-Cucumber']").find("Remover Tarefa").click_on
+  
 end
 
 Então('ela deve ter sido excluída no banco de dados') do
-  expect(Task.exists?(id:1)).to be false
+  expect(Task.exists?(id:10)).to be false
 end
 
 Então('não deverei vê-la no registro de tarefas') do
