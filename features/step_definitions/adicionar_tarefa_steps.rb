@@ -1,3 +1,8 @@
+Before('@board_duble_adicionar_tarefa') do
+  @board = Board.new(id:1,name:"Cucumber")
+  @board.save
+end
+
 Dado('que estou na página de registro de tarefas') do
   visit 'tasks/new'
 end

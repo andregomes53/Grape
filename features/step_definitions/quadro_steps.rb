@@ -1,4 +1,7 @@
-
+Before('@board_duble') do
+  @board = Board.new(id:1,name:"Cucumber")
+  @board.save
+end
 
 Dado('que eu estou na página inicial') do
   visit ""
@@ -33,10 +36,6 @@ Então('deverei ver a mensagem de erro de campo vazio') do
   expect(page).to have_content("Preencha o nome do quadro")
 end
 
-Before('@board_duble') do
-  @board = Board.new(id:1,name:"Cucumber")
-  @board.save
-end
 
 Dado('que estou na página de listagem de quadros') do
   visit "/boards"
