@@ -1,7 +1,8 @@
 Before('@tres_tarefas') do
-  Task.new(title: 'A tarefa', category: 'A categoria', user_id:10).save
-  Task.new(title: 'B tarefa', category: 'A categoria', user_id:10).save
-  Task.new(title: 'C tarefa', category: 'B categoria', user_id:10).save
+  Board.new(id:1,name:"Cucumber").save
+  log "A task A foi salva? " + Task.new(title: 'A tarefa', category: 'A categoria', user_id:10, board_id:1).save.to_s
+  log "A task B foi salva? " + Task.new(title: 'B tarefa', category: 'A categoria', user_id:10, board_id:1).save.to_s
+  log "A task C foi salva? " + Task.new(title: 'C tarefa', category: 'B categoria', user_id:10, board_id:1).save.to_s
 end
 
 Quando('clico em filtrar') do

@@ -1,7 +1,8 @@
 
 Before('@tarefa_duble') do
-  @task = Task.new(id:10,title:"Cucumber",deadline:"Ontem",user_id:10)
-  @task_2 = Task.new(id:11,title:"Tarefa2",deadline:"Hoje",user_id:10)
+  Board.new(id:1,name:"Cucumber").save
+  @task = Task.new(id:10,title:"Cucumber",deadline:"Ontem",user_id:10, board_id:1)
+  @task_2 = Task.new(id:11,title:"Tarefa2",deadline:"Hoje",user_id:10, board_id:1)
   @task.save
   @task_2.save  
 end

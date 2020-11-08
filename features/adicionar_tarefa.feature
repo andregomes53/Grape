@@ -10,7 +10,7 @@ Funcionalidade: Adicionar tarefa
     Dado que estou na página de registro de tarefas
     Quando preencho o campo 'task_title' com 'Nova tarefa'
     #E preencho o campo 'task_deadline' com '@amanha'
-    E preencho o campo 'task_board_id' com '1'
+    #E preencho o campo 'task_board_id' com '1'
     E clico em adicionar
     Então ela deve ter sido salvo no banco de dados
     E deverei ver a tarefa no registro de tarefas

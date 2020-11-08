@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2020_10_25_100951) do
     t.datetime "deadline"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "board_id", null: false
-    t.index ["board_id"], name: "index_tasks_on_board_id"
     t.integer "user_id", null: false
     t.string "category"
+    t.integer "board_id", null: false
+    t.index ["board_id"], name: "index_tasks_on_board_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 

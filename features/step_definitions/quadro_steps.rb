@@ -1,6 +1,5 @@
 Before('@board_duble') do
-  @board = Board.new(id:1,name:"Cucumber")
-  @board.save
+  Board.new(id:1,name:"Cucumber").save
 end
 
 Dado('que eu estou na página inicial') do

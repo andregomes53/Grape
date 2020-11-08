@@ -10,7 +10,6 @@ end
 
 Dado('que estou na página de registro de tarefas') do
   visit 'tasks/new'
-  log(page.html)
 end
 
 Quando('preencho o campo {string} com {string}') do |string, string2|
