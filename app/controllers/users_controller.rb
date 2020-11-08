@@ -4,14 +4,13 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		if passwordStrength and passwordEquals?
-			@user = User.new(user_params)
-			if @user.save
+
+		@user = User.new(user_params)
+
+		pass_valid = passwordStrength and passwordEquals?
+
+		if @user.save and pass_valid
 				redirect_to action: 'show', id: @user.id
-			else
-				puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-				render 'new'
-			end
 		else
 				render 'new'
 		end
@@ -102,7 +101,7 @@ class UsersController < ApplicationController
 	private
 	def passwordEquals?
 		if !user_params[:password].eql?(user_params[:password_confirmation]) then
-			@passw_error = "As senhas não conferem"
+			@passw_eq = "As senhas não conferem"
 			return false
 		else
 			return true

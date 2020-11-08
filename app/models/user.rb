@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+
 	has_many :tasks
 	has_many :board
 	has_many :user_board_table
@@ -7,7 +8,7 @@ class User < ApplicationRecord
 
 	validates :name, presence: {message: "O campo nome deve ser preenchido"}
 	validates :email, presence: {message: "O campo email deve ser preenchido"}
-	validates :password, :presence =>true, :confirmation =>true
+	validates :password, :presence =>true, :confirmation =>true, presence: {message: "As senhas não conferem"}
 	validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, message: "O email informado é inválido"}
 
 end

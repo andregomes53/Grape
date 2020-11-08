@@ -9,7 +9,7 @@ before_action :block_access, except: [:destroy]
     #else
     #  @has_user = true
     #end
-    if @user and @user.password == params[:session][:password]
+    if @user && @user.authenticate(params[:session][:password])
       sign_in
       redirect_to @user
     else

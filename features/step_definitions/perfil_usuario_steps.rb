@@ -23,11 +23,13 @@ Então('as informações do usuário deverão ter sido salvas no banco de dados'
   user = User.order("id").last
   expect(user.name).to eq('João das Neves')
   expect(user.email).to eq('joao_neves@email.com')
-  expect(user.password).to eq('Jo45Ness89')
 end
 
 Quando('deixo o campo name vazio') do
-	fill_in 'user[name]', :with => ""
+  fill_in 'user[email]', :with => "joao_neves@email.com"
+  fill_in 'user[password]', :with => "Jo54Ness89"
+  fill_in 'user[password_confirmation]', :with => "Jo54Ness89"
+  fill_in 'user[name]', :with => ""
 end
 
 Quando('deixo o campo email vazio') do
