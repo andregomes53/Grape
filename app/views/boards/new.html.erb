@@ -1,7 +1,7 @@
 <% if @board.errors.any? %>
   <div id="error_explanation">
     <h2>
-      <%= @board.errors.count %> erro(s) impedem que a tarefa seja salva
+      <%= @board.errors.count %> erro(s) impedem que o board seja salvo
     </h2>
     <ul>
       <% @board.errors.each do |attr, msg| %>

@@ -1,0 +1,34 @@
+<% if @error_login %>
+  <div id="error_explanation_not_has_user">
+    <h2>
+      Suas credenciais de login não coincidem com uma conta em nosso sistema.
+    </h2>
+  </div>
+<% end %>
+<% if @has_user%>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= @user.errors.count %> erro(s) impedem que a tarefa seja salva
+      </h2>
+      <ul>
+        <% @user.errors.each do |attr, msg| %>
+          <li>: <%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+<%= form_with scope: :session, url: sign_in_path, local: true  do |form| %>
+  <p>
+    <%= form.label "Email" %><br>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.label "Senha" %><br>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.submit 'Entrar' %>
+  </p>
+<% end %>
