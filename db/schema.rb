@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_062734) do
+ActiveRecord::Schema.define(version: 2020_10_25_100951) do
+
+  create_table "boards", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "tasks", force: :cascade do |t|
     t.integer "state"
@@ -21,6 +27,8 @@ ActiveRecord::Schema.define(version: 2020_10_25_062734) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
     t.string "category"
+    t.integer "board_id", null: false
+    t.index ["board_id"], name: "index_tasks_on_board_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -32,5 +40,6 @@ ActiveRecord::Schema.define(version: 2020_10_25_062734) do
     t.string "password"
   end
 
+  add_foreign_key "tasks", "boards"
   add_foreign_key "tasks", "users"
 end

@@ -3,9 +3,11 @@ math_task:
     title: fazer tarefa de matematica
     deadline: 2020-10-21
     user_id: 1
+    board_id: 10
     
 geo_task:
     id: 2
     title: fazer tarefa de geografia
     deadline: 2020-10-21
     user_id: 2
+    board_id: 10

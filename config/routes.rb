@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tasks
+  resources :boards
   resources :users
-  root 'tasks#new'
-
+  root to: 'pages#home'
 end

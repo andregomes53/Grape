@@ -1,0 +1,8 @@
+<h1> Página inicial</h1>
+
+<%= form_with scope: :board, url: boards_path, local: true do |form| %>
+  <p>
+    <%= form.text_field :name %>
+    <%= form.submit "Criar quadro" %>
+  </p>
+<% end %>

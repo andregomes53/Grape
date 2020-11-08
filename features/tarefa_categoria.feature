@@ -1,5 +1,6 @@
 #language: pt
 
+@board_duble
 @usuario_duble
 Funcionalidade: Categoria de tarefa
 Como usuário

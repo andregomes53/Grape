@@ -1,0 +1,8 @@
+<%= link_to "Adicionar board", new_board_path %>
+<% @boards.sort_by(&:id).each do |board| %>
+  <p>
+    <%= board.name %>
+    <%= link_to "Detalhes", board %>
+    <%= link_to "Excluir", board, method: :delete, data: {confirm: 'Tem certeza que deseja excluir este quadro ?'} %>
+  </p>
+<% end %>
