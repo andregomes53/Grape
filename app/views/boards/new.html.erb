@@ -1,0 +1,19 @@
+<% if @board.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= @board.errors.count %> erro(s) impedem que a tarefa seja salva
+    </h2>
+    <ul>
+      <% @board.errors.each do |attr, msg| %>
+        <li>: <%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with scope: :board, url: boards_path, local: true do |form| %>
+  <p>
+    <%= form.text_field :name %>
+    <%= form.submit "Criar quadro" %>
+  </p>
+<% end %>
