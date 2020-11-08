@@ -3,8 +3,14 @@ Before('@board_duble_adicionar_tarefa') do
   @board.save
 end
 
+Before('@usuario_duble') do
+  @user = User.new(id:10, name:"Joao" ,email:"joao_neves@email.com", password:"Jo45Ness89", password_confirmation:"Jo45Ness89")
+  @user.save
+end
+
 Dado('que estou na página de registro de tarefas') do
   visit 'tasks/new'
+  log(page.html)
 end
 
 Quando('preencho o campo {string} com {string}') do |string, string2|

@@ -1,5 +1,6 @@
 #language: pt
-  @board_duble_adicionar_tarefa
+@board_duble_adicionar_tarefa
+@usuario_duble
 Funcionalidade: Adicionar tarefa
   Como usuário
   Para que eu possa registrar minhas tarefas a fazer
