@@ -6,7 +6,7 @@ Quando('preencho o campo name com {string}') do |string|
   fill_in 'user[name]', :with => string
 end
 
-Quando('o campo email com {string}') do |string|
+Quando('preencho o campo email com {string}') do |string|
   fill_in 'user[email]', :with => string
 end
 

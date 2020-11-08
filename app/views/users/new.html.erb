@@ -10,6 +10,11 @@
     </ul>
   </div>
 <% end %>
+<% if @passw_error%>
+  <div id="error_explanation2">
+    <%=@passw_error %>
+  </div>
+<% end %>
 <%= form_with scope: :user, url: users_path, local: true  do |form| %>
   <p>
     <%= form.label :Nome %><br>
