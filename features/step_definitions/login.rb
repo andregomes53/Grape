@@ -16,7 +16,7 @@ Quando('clico no botão Entrar') do
 end
 
 Então('deverei ser redirecionado para minhas tarefas') do
-  expect(page).to have_content("Suas credenciais de login não coincidem com uma conta em nosso sistema.")
+  expect(page).to have_content("joao_neves@email.com")
 end
 
 Quando('preencho o campo email e o campo senha com informações que não coincidem na base de dados') do
@@ -29,9 +29,9 @@ Quando('preencho o campo login_email com um email inválido') do
 end
 
 Quando('preencho o campo email com um email não registrado na base de dados') do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in 'session[email]', :with => "daniela_targariana@email.com"
 end
 
 Quando('preencho o campo senha com um senha não registrado na base de dados') do
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in 'session[password]', :with => "senha_errada"
 end
