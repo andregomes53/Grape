@@ -7,6 +7,7 @@ before_action :block_access, except: [:destroy]
       sign_in
       redirect_to @user
     else
+      @error_login = true
       render action: :new
     end
   end
