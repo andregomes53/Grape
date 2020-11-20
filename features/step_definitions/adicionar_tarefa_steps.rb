@@ -4,7 +4,7 @@ Before('@board_duble_adicionar_tarefa') do
 end
 
 Before('@usuario_duble') do
-  @user = User.new(id:10, name:"Joao" ,email:"joao_neves@email.com", password:"Jo45Ness89", password_confirmation:"Jo45Ness89")
+  @user = User.new(id:10, name:"Joao" ,email:"joao_neves@email.com", password:"correct horse battery staple", password_confirmation:"correct horse battery staple")
   @user.save
 end
 
