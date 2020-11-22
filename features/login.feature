@@ -11,7 +11,7 @@ Eu entro em um sessão particular no sistema com minhas informações pessoais r
 Cenário: Logado com sucesso
 Dado que estou na página de login
 Quando preencho o campo login_email com "joao_neves@email.com"
-E preencho o campo login_senha com "Jo45Ness89"
+E preencho o campo login_senha com "correct horse battery staple"
 E clico no botão Entrar
 Então deverei ser redirecionado para minhas tarefas
 

@@ -9,6 +9,7 @@ class User < ApplicationRecord
 	validates :name, presence: {message: "O campo nome deve ser preenchido"}
 	validates :email, presence: {message: "O campo email deve ser preenchido"}
 	validates :password, confirmation: true, presence: {message: "As senhas não conferem"}
+
 	validates :email, format: {with: URI::MailTo::EMAIL_REGEXP, message: "O email informado é inválido"}
 
 end
