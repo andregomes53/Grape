@@ -52,7 +52,7 @@ end
 Dado('que estou logado') do
   visit 'sessions/new'
   fill_in "session[email]", :with => "joao_neves@email.com"
-  fill_in "session[password]", :with => "Jo45Ness89"
+  fill_in "session[password]", :with => "correct horse battery staple"
   click_on 'Entrar'
 end
 
