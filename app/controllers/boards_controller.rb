@@ -1,4 +1,6 @@
 class BoardsController < ApplicationController
+before_action :blockaccess_notlog
+
   def index
     @boards = Board.all
   end

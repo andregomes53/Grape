@@ -61,3 +61,8 @@ Quando preencho o campo password com uma senha muito longa
 E clico em Registrar
 Então deverei ver a mensagem de erro "Senha muito longa"
 
+@usuario_duble
+Cenário: Erro em registrar usuário - Usuário já logado
+Dado que estou logado
+E que estou na página de criação de usuário
+Então deverei ser redirecionado para página de boards

@@ -75,3 +75,6 @@ Quando('preencho o campo password com uma senha muito longa') do
   fill_in 'user[password]', :with => "Senha tão longa que o bcrypt não permite salvar porque não cabe"
 end
 
+Então('deverei ser redirecionado para página de boards') do
+  expect(page).to have_content("Adicionar board")
+end

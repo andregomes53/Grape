@@ -20,7 +20,9 @@
     <%=@passw_eq %>
   </div>
 <% end %>
+
 <%= form_with scope: :user, url: users_path, local: true  do |form| %>
+  <h1>Página de cadastro</h1>
   <p>
     <%= form.label :Nome %><br>
     <%= form.text_field :name %>

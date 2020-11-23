@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_action :block_access
+
 	def new
 		@user = User.new
 	end
@@ -6,7 +8,7 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(user_params)
 		if strong_password? and passwords_match? and @user.save
-			redirect_to action: 'show', id: @user.id
+			redirect_to '/sign_in'
 		else
 			render 'new'
 		end

@@ -16,7 +16,7 @@ Quando('clico no botão Entrar') do
 end
 
 Então('deverei ser redirecionado para minhas tarefas') do
-  expect(page).to have_content("joao_neves@email.com")
+  expect(page).to have_content("Adicionar board")
 end
 
 Quando('preencho o campo email e o campo senha com informações que não coincidem na base de dados') do

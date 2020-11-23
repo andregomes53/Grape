@@ -7,7 +7,8 @@ Funcionalidade: Adicionar tarefa
   Eu quero colocar uma tarefa no banco de dados
 
   Cenário: Tarefa adicionada com sucesso
-    Dado que estou na página de registro de tarefas
+    Dado que estou logado
+    E que estou na página de registro de tarefas
     Quando preencho o campo 'task_title' com 'Nova tarefa'
     #E preencho o campo 'task_deadline' com '@amanha'
     #E preencho o campo 'task_board_id' com '1'
@@ -16,13 +17,15 @@ Funcionalidade: Adicionar tarefa
     E deverei ver a tarefa no registro de tarefas
 
   Cenário: Erro em adicionar tarefa - sem titulo
-    Dado que estou na página de registro de tarefas
+    Dado que estou logado
+    E que estou na página de registro de tarefas
     Quando deixo o campo 'task_title' vazio
     E clico em adicionar
     Então deverei ver a mensagem de erro "O nome da tarefa deve ser informado"
 
   Cenário: Erro em adicionar tarefa - data inválida
-    Dado que estou na página de registro de tarefas
+    Dado que estou logado
+    E que estou na página de registro de tarefas
     Quando preencho o campo 'task_deadline' com uma data anterior a data atual
     E clico em adicionar
     Então deverei ver a mensagem de erro "A data informada é inválida"
