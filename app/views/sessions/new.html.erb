@@ -20,6 +20,7 @@
   <% end %>
 <% end %>
 <%= form_with scope: :session, url: sign_in_path, local: true  do |form| %>
+  <h1>Faça login para entrar</h1>
   <p>
     <%= form.label "Email" %><br>
     <%= form.text_field :email %>
@@ -30,5 +31,8 @@
   </p>
   <p>
     <%= form.submit 'Entrar' %>
+  </p>
+  <p>
+    <a href="/users/new">Não possuí conta ainda? Clique aqui para cadastrar</a>
   </p>
 <% end %>

@@ -10,7 +10,7 @@ module SessionsHelper
 
   def block_access # Blocking the access, a user shouldn't be able to login multiple times.
     if current_user.present?
-      redirect_to users_path
+      redirect_to '/boards'
     end
   end
 
@@ -18,6 +18,12 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def blockaccess_notlog # Returns if a users is logged
+    if !logged_in?
+      redirect_to '/sign_in'
+    end
+  end
+  
   # Sign out helpers
   def sign_out # Sign out function
     session.delete(:user_id)

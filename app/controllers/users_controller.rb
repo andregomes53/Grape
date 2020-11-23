@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_action :block_access
+
 	def new
 		@user = User.new
 	end
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
 		pass_valid = passwordStrength and passwordEquals?
 
 		if @user.save and pass_valid
-				redirect_to action: 'show', id: @user.id
+				redirect_to '/sign_in'
 		else
 				render 'new'
 		end

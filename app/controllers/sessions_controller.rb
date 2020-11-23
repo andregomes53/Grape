@@ -5,7 +5,7 @@ before_action :block_access, except: [:destroy]
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       sign_in
-      redirect_to @user
+      redirect_to '/boards'
     else
       @error_login = true
       render action: :new
@@ -14,7 +14,7 @@ before_action :block_access, except: [:destroy]
 
   def destroy
     sign_out
-    redirect_to root_url
+    redirect_to '/sign_in'
   end
 
 end

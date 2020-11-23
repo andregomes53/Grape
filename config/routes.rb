@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   post   'sign_in'   => 'sessions#create'
   delete 'sign_out'  => 'sessions#destroy'
 
-  root 'pages#home'
+  root 'sessions#new'
 
 end
