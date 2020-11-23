@@ -1,6 +1,8 @@
 #language: pt 
 
+@usuario_duble
 @tarefa_duble
+
 Funcionalidade: Alterar tarefa
 Como usuário 
 Para que eu possa alterar minhas tarefas a fazer

@@ -1,11 +1,16 @@
+
+Before('@usuario_duble') do
+    @user = User.new(id:11, name:"Joao" ,email:"joao_neves@email.com", password:"correct horse battery staple", password_confirmation:"correct horse battery staple")
+    @user.save
+end
+
 Before('@tarefa_duble') do
     Board.new(id:10,name:"Cucumber").save
-    @task = Task.new(id:11,title:"Cucumber",deadline:"Ontem",user_id:10, board_id:10)
-
+    Task.new(id:15,title:"Tarefa 15",deadline:"Ontem",user_id:11, board_id:10).save
 end
 
 Dado('que estou na página de uma tarefa') do
-    visit 'tasks/1'
+    visit 'tasks/15'
     #log(page.html)
 end
   
@@ -14,12 +19,12 @@ Quando('clico em Editar') do
 end
 
 Então('deverei ser redirecionado para a página de editar tarefa') do
-    get 'tasks/1/edit'
+    get 'tasks/15/edit'
     #log(page.html)
 end
 
 Quando('altero algum campo') do
-    fill_in :task_title, :with => 'NovoNome'
+    fill_in 'task[title]', :with => 'NovoNome'
 end
 
 Quando('clico em Editar Tarefa') do
@@ -27,10 +32,11 @@ Quando('clico em Editar Tarefa') do
 end
 
 Então('ela deve ter sido alterada no banco de dados') do
-    expect(Task.exists?(title:'fazer tarefa de matematica')).to be false
+    #log(page.html)
+    expect(Task.exists?(title:'Tarefa 15')).to be false
 end
 
 E('deverei ver a tarefa alterada no registro de tarefas')do
     visit '/tasks'
-    expect(page).not_to have_content("fazer tarefa de matematica")
+    expect(page).not_to have_content("Tarefa 15")
 end

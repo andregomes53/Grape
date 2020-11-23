@@ -33,6 +33,16 @@ class TasksController < ApplicationController
 		redirect_to action: 'index'
 	end
 
+	def edit
+		@task = Task.find(params[:id])
+	end
+
+	def update
+		@task = Task.find(params[:id])
+  		@task.update(title: params[:task][:title], deadline: params[:task][:deadline], category: params[:task][:category])
+  		redirect_to task_path(@task)
+	end
+
 	private
 	def task_params
 		params.require(:task).permit(:title, :deadline, :board_id, :category, :user_id )
