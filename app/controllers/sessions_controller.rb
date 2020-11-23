@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-before_action :block_access, except: [:destroy]
+	before_action :block_access, except: [:destroy]
 
   def create
     @user = User.find_by(email: params[:session][:email])
@@ -17,4 +17,8 @@ before_action :block_access, except: [:destroy]
     redirect_to '/sign_in'
   end
 
+	def destroy
+		sign_out
+		redirect_to root_url
+	end
 end

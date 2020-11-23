@@ -6,17 +6,12 @@ before_action :block_access
 	end
 
 	def create
-
 		@user = User.new(user_params)
-
-		pass_valid = passwordStrength and passwordEquals?
-
-		if @user.save and pass_valid
-				redirect_to '/sign_in'
+		if strong_password? and passwords_match? and @user.save
+			redirect_to '/sign_in'
 		else
-				render 'new'
+			render 'new'
 		end
-
 	end
 
 	def show
@@ -29,80 +24,54 @@ before_action :block_access
 	end
 
 	private
-	def passwordStrength
-
+	def strong_password?
 		password = user_params[:password]
-
 		points = 0
 
-		if password.length < 8 then
-			@passw_error = "Senha muito curta (mínimo 8 caracteres)"
+		if password.length < 10
+			@passw_error = "Senha muito curta (mínimo 10 caracteres)"
 			return false
 		end
-
-		if password.length > 10 and password.length < 16 then # Point for large password
-			points = 1
+		if password.length > 16 # Point for large password
+			points += 1
 		end
-
-		if password.length > 15
-			@passw_error = "Senha muito longa (máximo 15 caracteres)"
+		if password.length > 50
+			@passw_error = "Senha muito longa (máximo 50 caracteres)"
 			return false
 		end
 
 		used_int = false
 		used_char = false
 		used_capital = false
+		used_other = false
 
-		def letter?(character)
-			character =~ /[[:alpha:]]/
-		end
-
-		def numeric?(character)
-			character =~ /[[:digit:]]/
-		end
-
-		for char in password.split("")
-
-			if letter?(char) then
-
-				if char == char.capitalize and !used_capital then
-					points = points + 1 #Point for using a capitalized character
-					used_capital = true
-					next
-				end
-
-				if !used_char then
-					points = points + 1 #Point for using an alphabetical character
-					used_char = true
-
-				end
-
-			elsif numeric?(char)
-				if !used_int then
-					points = points + 1 #Point for using a numerical character
-					used_int = true
-				end
-
-			else
-				@passw_error = "Apenas número e letras são aceitos"
-				return false
-
+		password.each_char do |char|
+			if char =~ /[[:upper:]]/ and !used_capital
+				points += 1
+				used_capital = true
+			elsif char =~ /[[:lower:]]/ and !used_char
+				points += 1
+				used_char = true
+			elsif char =~ /[[:digit:]]/ and !used_int
+				points += 1
+				used_int = true
+			elsif !used_other
+				points += 1
+				used_other = true
 			end
-
 		end
 
-
-		if points < 3 then
+		if points < 3
 			@passw_error = "A senha informada é muito fraca"
 			return false
-		else
-			return true
 		end
+
+		return true
 	end
 
 	private
-	def passwordEquals?
-		if !user_params[:password].eql?(user_params[:password_confirmation]) then
+	def passwords_match?
+		if user_params[:password] != user_params[:password_confirmation]
 			@passw_eq = "As senhas não conferem"
 			return false
 		else

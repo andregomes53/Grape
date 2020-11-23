@@ -9,7 +9,7 @@ Cenário: Usuário registrado com sucesso
 Dado que estou na página de criação de usuário
 Quando preencho o campo name com 'João das Neves'
 E preencho o campo email com "joao_neves@email.com"
-E o campo senha com "Jo45Ness89" e o campo confirmar_senha com "Jo45Ness89"
+E o campo senha com "correct horse battery staple" e o campo confirmar_senha com "correct horse battery staple"
 E clico em Registrar
 Então as informações do usuário deverão ter sido salvas no banco de dados
 
@@ -35,7 +35,7 @@ Cenário: Erro em registrar usuário - sem senha
 Dado que estou na página de criação de usuário
 Quando deixo o campo password vazio
 E clico em Registrar
-Então deverei ver a mensagem de erro "O campo nome deve ser preenchido"
+Então deverei ver a mensagem de erro "Senha muito curta"
 
 Cenário: Erro em registrar usuário - senhas não conferem
 Dado que estou na página de criação de usuário
@@ -51,21 +51,15 @@ Então deverei ver a mensagem de erro "A senha informada é muito fraca"
 
 Cenário: Erro em registrar usuário - senha muito curta
 Dado que estou na página de criação de usuário
-Quando preencho o campo password com uma senha com menos oito caracteres
+Quando preencho o campo password com uma senha muito curta
 E clico em Registrar
-Então deverei ver a mensagem de erro "Senha muito curta (mínimo 8 caracteres)"
+Então deverei ver a mensagem de erro "Senha muito curta"
 
 Cenário: Erro em registrar usuário - senha muito longa
 Dado que estou na página de criação de usuário
-Quando preencho o campo password com uma senha com mais de quinze caracteres
+Quando preencho o campo password com uma senha muito longa
 E clico em Registrar
-Então deverei ver a mensagem de erro "Senha muito longa (máximo 15 caracteres)"
-
-Cenário: Erro em registrar usuário - senha inválida (caracter inválido)
-Dado que estou na página de criação de usuário
-Quando preencho o campo password com uma senha que contém um caracter inválido
-E clico em Registrar
-Então deverei ver a mensagem de erro "Apenas número e letras são aceitos"
+Então deverei ver a mensagem de erro "Senha muito longa"
 
 @usuario_duble
 Cenário: Erro em registrar usuário - Usuário já logado

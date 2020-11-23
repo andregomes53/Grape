@@ -40,6 +40,9 @@
 yarn-debug.log*
 .yarn-integrity
 
+# Ignore Coveralls stuff
+/coverage
+
 # Jetbrains IDEs
 .idea/
 /public/packs
