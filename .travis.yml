@@ -6,8 +6,7 @@ rvm:
 script:
  - bundle update --bundler
  - bundle exec rake db:migrate
- - bundle exec rspec spec
- - bundle exec cucumber
+ - bundle exec rake test
 
 branches:
   only:

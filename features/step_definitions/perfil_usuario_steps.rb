@@ -27,43 +27,52 @@ end
 
 Quando('deixo o campo name vazio') do
   fill_in 'user[email]', :with => "joao_neves@email.com"
-  fill_in 'user[password]', :with => "Jo54Ness89"
-  fill_in 'user[password_confirmation]', :with => "Jo54Ness89"
+  fill_in 'user[password]', :with => "correct horse battery staple"
+  fill_in 'user[password_confirmation]', :with => "correct horse battery staple"
   fill_in 'user[name]', :with => ""
 end
 
 Quando('deixo o campo email vazio') do
   fill_in 'user[email]', :with => ""
+  fill_in 'user[password]', :with => "correct horse battery staple"
+  fill_in 'user[password_confirmation]', :with => "correct horse battery staple"
+  fill_in 'user[name]', :with => "João Neves"
 end
 
 Quando('preencho o campo email com um email inválido') do
   fill_in 'user[email]', :with => "email_invalido"
+  fill_in 'user[password]', :with => "correct horse battery staple"
+  fill_in 'user[password_confirmation]', :with => "correct horse battery staple"
+  fill_in 'user[name]', :with => "João Neves"
 end
 
 Quando('deixo o campo password vazio') do
+  fill_in 'user[email]', :with => "joao_neves@email.com"
   fill_in 'user[password]', :with => ""
+  fill_in 'user[password_confirmation]', :with => "correct horse battery staple"
+  fill_in 'user[name]', :with => "João Neves"
 end
 
 Quando('preencho o campo password e o campo password_confirmation com dados diferentes') do
   fill_in 'user[name]', :with => "João das Neves"
   fill_in 'user[email]', :with => "joao_neves@email.com"
-  fill_in 'user[password]', :with => "Jo54Ness89"
-  fill_in 'user[password_confirmation]', :with => "Jo45Ness98"
+  fill_in 'user[password]', :with => "correct horse battery staple"
+  fill_in 'user[password_confirmation]', :with => "incorrect horse battery staple"
 end
 
 Quando('preencho o campo password com uma senha muito fraca') do
   fill_in 'user[name]', :with => "João das Neves"
   fill_in 'user[email]', :with => "joao_neves@email.com"
-  fill_in 'user[password]', :with => "12345678"
-   fill_in 'user[password_confirmation]', :with => "12345678"
+  fill_in 'user[password]', :with => "1234567890"
+   fill_in 'user[password_confirmation]', :with => "1234567890"
 end
 
-Quando('preencho o campo password com uma senha com menos oito caracteres') do
+Quando('preencho o campo password com uma senha muito curta') do
   fill_in 'user[password]', :with => "senha"
 end
 
-Quando('preencho o campo password com uma senha com mais de quinze caracteres') do
-  fill_in 'user[password]', :with => "senhamuitolonga1"
+Quando('preencho o campo password com uma senha muito longa') do
+  fill_in 'user[password]', :with => "Senha tão longa que o bcrypt não permite salvar porque não cabe"
 end
 
 Quando('preencho o campo password com uma senha que contém um caracter inválido') do

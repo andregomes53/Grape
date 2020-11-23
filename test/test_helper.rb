@@ -1,9 +1,9 @@
-require 'coveralls'
-Coveralls.wear! 'rails'
-
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+
+require 'coveralls'
+Coveralls.wear! 'rails'
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
