@@ -7,6 +7,7 @@ describe 'TasksController', :type => :controller do
 	end
 	
 	describe 'alterando task' do
+		fixtures :tasks
 		it 'Redireciona para a página de alterar tarefa' do
 			get 'edit', params: {id: 1}
 			expect(response).to render_template(:edit)
