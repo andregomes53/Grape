@@ -2,10 +2,6 @@ Before('@board_duble') do
   Board.new(id:1,name:"Cucumber").save
 end
 
-Dado('que eu estou na página inicial') do
-  visit ""
-end
-
 Quando('preencho o campo nome') do
   fill_in :board_name, :with => "Novo quadro"
 end
@@ -49,7 +45,21 @@ Então('o quadro deve ser removido do banco de dados') do
   expect(Board.exists?(id:1)).to be false
 end
 
-Então('deverei ver a página de listagem sem o quadro excluido') do
+Então('deverei ver a página de listagem sem o quadro excluído') do
   expect(page).not_to have_content("Cucumber")
 end
 
+Dado('que estou logado') do
+  visit 'sessions/new'
+  fill_in "session[email]", :with => "joao_neves@email.com"
+  fill_in "session[password]", :with => "Jo45Ness89"
+  click_on 'Entrar'
+end
+
+Dado('não estou logado') do
+  log("Sign in page not visited")
+end
+
+Então('deverei ser redirecionado para página de login') do
+  expect(page).to have_content("Faça login para entrar")
+end

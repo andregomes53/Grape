@@ -69,3 +69,7 @@ end
 Quando('preencho o campo password com uma senha que contém um caracter inválido') do
   fill_in 'user[password]', :with => "senha$123"
 end
+
+Então('deverei ser redirecionado para página de boards') do
+  expect(page).to have_content("Adicionar board")
+end
