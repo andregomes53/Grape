@@ -56,6 +56,20 @@
   <div class="board-wrapper">
     <div class="board" id="board">
 
+      <p>
+        <strong>Nome:</strong>
+        <%= @board.name %>
+        <% @board.task.each do |task| %>
+        <p>
+          <strong>Nome:</strong>
+          <%= task.title %>
+        </p>
+        <p>
+          <strong>Data:</strong>
+          <%= task.deadline %>
+        </p>
+      <% end %>
+      </p>
     </div>
   </div>
 
