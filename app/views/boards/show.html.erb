@@ -1,87 +1,15 @@
-<head>
-  <% @title = @board.name %>
-  <meta charset="UTF-8"/>
-  <meta name="description" content="Descricao esboco"/>
-  <meta name="keywords" content=""/>
-  <meta name="author" content="Giuseppe Lanna e Leonardo Britto"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../assets/stylesheets/fonts.css"/>
-  <link rel="stylesheet" href="../../assets/stylesheets/style.css"/>
-  <link rel="icon" href="../../assets/images/favicon.png"/>
-  <script>
-      $(document).ready(function () {
-          $('html, body, *').mousewheel(function (e, delta) {
-              this.scrollLeft -= (delta);
-              e.preventDefault();
-          });
-      });
-  </script>
-</head>
-
-<body>
-<div id="nocss">
-  Seu navegador não foi capaz de carregar todos os recursos do Grape. Eles podem ter sido bloqueados pelo seu
-  Firewall ou pelo seu navegador. Tente recarregar a página.
-</div>
-<div id="full-container">
-
-  <!--Menu-->
-  <div id="menu">
-    <div class="menu-header">
-      <div class="logo-wrapper">
-        <%= image_tag(src = "grape-logo-white.png", :alt => "Grape Logo") %>
-      </div>
-      <h1>
-        Grape
-      </h1>
-    </div>
-    <div class="menu-option soft-transition">
-      <%= link_to "Página Inicial", root_url %>
-    </div>
-    <div class="menu-option soft-transition">
-      <%= link_to "Sair", boards_path %>
-    </div>
-  </div>
-
-  <!--Board-->
-  <div class="board-wrapper">
-    <div class="board" id="board">
-      <div class="list-wrapper">
-        <div class="list">
-          <div class="list-title done">
-            Feito
-            <div class="list-addcard"></div>
-          </div>
-
-          <div class="list-content">
-
-            <% @board.task.each do |task| %>
-              <div class="card">
-                <div class="card-header">
-                  <h3><%= task.title %></h3>
-                </div>
-                <div contenteditable="true" class="card-description" spellcheck="false">
-                  <strong>Data:</strong>
-                  <%= task.deadline %>
-                </div>
-
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</div>
-<script stype="text/javascript">
-    function a(vas = 3) {
-        return 1;
-    }
-</script>
-<!--<script type="text/javascript" src="../../javascript/just-tests.js"></script>-->
-</body>
-
-</html>
-<!--Precisamente, King Witcher-->
+<p>
+  <strong>Nome:</strong>
+  <%= @board.name %>
+  <% @board.task.each do |task| %>
+  <p>
+    <strong>Nome:</strong>
+    <%= task.title %>
+  </p>
+  <p>
+    <strong>Data:</strong>
+    <%= task.deadline %>
+  </p>
+<% end %>
+</p>
+<%= link_to "Voltar para a lista", boards_path %>
