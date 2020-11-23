@@ -61,6 +61,12 @@ Quando preencho o campo password com uma senha muito longa
 E clico em Registrar
 Então deverei ver a mensagem de erro "Senha muito longa"
 
+Cenário: Erro em registrar usuário - senha inválida (caracter inválido)
+Dado que estou na página de criação de usuário
+Quando preencho o campo password com uma senha que contém um caracter inválido
+E clico em Registrar
+Então deverei ver a mensagem de erro "Apenas número e letras são aceitos"
+
 @usuario_duble
 Cenário: Erro em registrar usuário - Usuário já logado
 Dado que estou logado
