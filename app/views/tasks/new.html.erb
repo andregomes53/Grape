@@ -12,12 +12,22 @@
 <% end %>
 <%= form_with scope: :task, url: tasks_path, local: true  do |form| %>
   <p>
-    <%= form.label :titulo %><br>
+    <%= form.label "título" %><br>
     <%= form.text_field :title %>
   </p>
   <p>
     <%= form.label "data de entrega" %><br>
-    <%= form.text_field :deadline %>
+    <%= form.text_field :deadline, type: 'date' %>
+  </p>
+  <p>
+    <%= form.label "categoria" %><br>
+    <%= form.text_field :category %>
+  </p>
+  <p>
+    <%= form.hidden_field :user_id, value: 10 %>
+  </p>
+  <p>
+    <%= form.hidden_field :board_id, value: 1 %>
   </p>
   <p>
     <%= form.submit 'Adicionar nova tarefa' %>

@@ -1,0 +1,11 @@
+joao:
+    id: 1
+    name: Joao
+    email: joao@exemplo.com
+    password_digest: joao123###
+
+maria:
+    id: 2
+    name: Maria
+    email: maria@exemplo.com
+    password_digest: maria123###

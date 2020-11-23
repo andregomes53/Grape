@@ -1,3 +1,13 @@
+Before('@board_duble_adicionar_tarefa') do
+  @board = Board.new(id:1,name:"Cucumber")
+  @board.save
+end
+
+Before('@usuario_duble') do
+  @user = User.new(id:10, name:"Joao" ,email:"joao_neves@email.com", password:"correct horse battery staple", password_confirmation:"correct horse battery staple")
+  @user.save
+end
+
 Dado('que estou na página de registro de tarefas') do
   visit 'tasks/new'
 end

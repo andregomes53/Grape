@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  belongs_to :user
+  belongs_to :board
   validates :title, presence: {message: "O nome da tarefa deve ser informado"}
   validate :deadlineInFuture
 
