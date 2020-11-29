@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe 'SessionsController', :type => :controller do
+
 	before(:context) do
 		@controller = SessionsController.new
 	end
