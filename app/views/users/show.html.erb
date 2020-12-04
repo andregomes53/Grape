@@ -6,4 +6,5 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<%= link_to "Excluir conta", @user, method: :delete, data: { confirm: 'Tem certeza que deseja excluir a sua conta?' } %>
 <%= link_to "Voltar para a lista", users_path %>
