@@ -1,5 +1,5 @@
 #language: pt
-
+@usuario_duble_para_admin
 Funcionalidade: Listagem de usuários
 Como administrador
 Para que eu possa ter controle dos usuários do sistema
