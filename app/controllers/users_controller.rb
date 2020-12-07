@@ -28,6 +28,21 @@ class UsersController < ApplicationController
 		redirect_to '/sign_in'
 	end
 
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		
+		@user = User.find(params[:id])
+  		if @user.update(name: params[:user][:name], email: params[:user][:email])
+			redirect_to user_path(@user)
+		else 
+			Rails.logger.info(@user.errors.messages.inspect)
+		end
+		
+	end
+
 	private
 	def user_params
 		params.require(:user).permit(:name,:email,:password,:password_confirmation)
