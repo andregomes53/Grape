@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-	before_action :block_access
-	#, except: [:show, :destroy]
+	before_action :block_access, except: [:show, :destroy]
 
 	def new
 		@user = User.new
@@ -36,9 +35,12 @@ class UsersController < ApplicationController
 	def update
 		
 		@user = User.find(params[:id])
-  		@user.update(name: params[:user][:name], email: params[:user][:email])
-		redirect_to user_path(@user)
-		#raise params.inspect
+  		if @user.update(name: params[:user][:name], email: params[:user][:email])
+			redirect_to user_path(@user)
+		else 
+			Rails.logger.info(@user.errors.messages.inspect)
+		end
+		
 	end
 
 	private
