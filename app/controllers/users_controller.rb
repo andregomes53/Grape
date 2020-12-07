@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-	before_action :block_access, except: [:show, :destroy]
+	before_action :block_access
+	#, except: [:show, :destroy]
 
 	def new
 		@user = User.new
@@ -26,6 +27,18 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.destroy
 		redirect_to '/sign_in'
+	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		
+		@user = User.find(params[:id])
+  		@user.update(name: params[:user][:name], email: params[:user][:email])
+		redirect_to user_path(@user)
+		#raise params.inspect
 	end
 
 	private
