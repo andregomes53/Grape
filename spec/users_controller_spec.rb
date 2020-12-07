@@ -27,5 +27,9 @@ describe 'UsersController', :type => :controller do
 			math_task = tasks(:math_task)
 			expect(math_task.user_id).to equal(user.id)
 		end
+		it 'list all users' do
+			get 'index'
+			expect(response).to be_successful
+		end
 	end
 end
